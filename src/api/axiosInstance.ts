@@ -1,0 +1,36 @@
+import axios, { type InternalAxiosRequestConfig } from "axios";
+
+export const axiosInstance = axios.create({
+  baseURL: import.meta.env.VITE_API_URL,
+  timeout: 10_000,
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
+axiosInstance.interceptors.request.use(
+  (config: InternalAxiosRequestConfig) => {
+    const token = localStorage.getItem("accessToken");
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
+
+axiosInstance.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    const status = error.response?.status;
+
+    if (status === 401) {
+      localStorage.removeItem("accessToken");
+      window.location.href = "/login";
+    }
+    if (status === 403) console.warn("Ruxsat yo'q");
+    if (status === 405) console.warn("Serverda xato, keyinroq urining");
+
+    return Promise.reject(error); // ✅ ASOSIY TUZATISH
+  }
+);
