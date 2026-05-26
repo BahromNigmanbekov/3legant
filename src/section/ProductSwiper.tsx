@@ -3,14 +3,7 @@ import { useGetProducts } from '../hooks/useProducts'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
 
-interface Product {
-  id: string;
-  title: string;
-  price: number;
-  oldPrice: number | null;
-  currency: string;
-  images?: string[];
-}
+
 
 
 const ProductCardSkeleton = () => (

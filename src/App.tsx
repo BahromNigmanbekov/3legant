@@ -8,7 +8,7 @@ import Contact from './page/contact/Contact'
 import Blog from './page/blog/Blog'
 import Header from './ui/header/Header'
 import Footer from './ui/footer/Footer'
-import { useGetProducts } from './hooks/useProducts'
+
 
 
 
