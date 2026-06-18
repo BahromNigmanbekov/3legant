@@ -269,7 +269,7 @@ const Shop = () => {
                 </p>
                 <h3 className="text-xl font-medium tracking-wide">{item.title}</h3>
                 <div className="mt-3 flex items-center justify-between border-t border-white/20 pt-3">
-                  <span className="text-lg font-light">${item.price}</span>
+                  <span className="text-lg font-light">{item.price}.000 so'm</span>
                   <span className="rounded-full bg-white/20 px-3 py-1 text-xs backdrop-blur-md">
                     Sotib olish
                   </span>
