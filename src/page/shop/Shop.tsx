@@ -201,7 +201,7 @@ const Shop = () => {
     <div className="min-h-screen bg-[#ffffff] px-4 py-8 text-neutral-800 antialiased sm:px-8 md:px-16">
       <AntMessage msg={msg} />
 
-      <div className="mb-12 mt-[80px] flex flex-col items-center justify-between gap-4 border-b border-neutral-200 pb-6 md:flex-row">
+      <div className="mb-12 flex flex-col items-center justify-between gap-4 border-b border-neutral-200 pb-6 md:flex-row">
         <div>
           <h1 className="text-2xl font-light uppercase tracking-widest text-neutral-900 md:text-3xl">
             Katalog
@@ -269,7 +269,7 @@ const Shop = () => {
                 </p>
                 <h3 className="text-xl font-medium tracking-wide">{item.title}</h3>
                 <div className="mt-3 flex items-center justify-between border-t border-white/20 pt-3">
-                  <span className="text-lg font-light">{item.price}.000 so'm</span>
+                  <span className="text-lg font-light">${item.price}</span>
                   <span className="rounded-full bg-white/20 px-3 py-1 text-xs backdrop-blur-md">
                     Sotib olish
                   </span>
