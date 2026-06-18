@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Search, User, ShoppingBag, Menu } from "lucide-react";
+import { ShoppingBag, Menu } from "lucide-react";
+import logo from "../../assets/logo.jpg"
 import { useTranslation } from "react-i18next";
 import Sidebar from "../../components/sidebar/Sidebar";
 
@@ -29,7 +30,6 @@ function Header() {
   const navLinks = [
     { label: t("nav_home", "Home"), to: "/" },
     { label: t("nav_shop", "Shop"), to: "/shop" },
-    { label: t("nav_blog", "Blog"), to: "/blog" },
     { label: t("nav_contact", "Contact Us"), to: "/contact" },
   ];
 
@@ -44,8 +44,9 @@ function Header() {
             <button className="md:hidden p-2 text-gray-500 hover:text-gray-900" onClick={() => setSidebarOpen(true)}>
               <Menu strokeWidth={1.8} className="w-5 h-5" />
             </button>
-            <NavLink to="/" className="text-xl font-semibold text-gray-900" style={{ fontFamily: "'Georgia', serif" }}>
-              3legant.
+            <NavLink to="/" className="flex items-center text-[14px] font-semibold text-gray-900" style={{ fontFamily: "Arial, sans-serif" }}>
+              <img src={logo} alt="Logo"  className="h-8 w-auto"/>
+              <p>General Jalyuzi</p>
             </NavLink>
           </div>
 
@@ -60,12 +61,8 @@ function Header() {
           </ul>
 
           <div className="flex items-center gap-1">
-            <button className="hidden md:flex p-2.5 text-gray-500"><Search className="w-5 h-5" /></button>
-            <button className="hidden md:flex p-2.5 text-gray-500"><User className="w-5 h-5" /></button>
-            <button className="relative p-2.5 text-gray-500">
-              <ShoppingBag className="w-5 h-5" />
-              {cartCount > 0 && <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] flex items-center justify-center rounded-full text-[10px] font-semibold text-white bg-gray-900">{cartCount}</span>}
-            </button>
+            
+            
 
             {/* ✅ Haqiqiy dumaloq rasm-ikonkali til tugmasi */}
             <div className="relative ml-1">

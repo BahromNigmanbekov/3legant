@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { X, Search } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import logo from "../../assets/logo.jpg"
 
 interface SidebarProps {
   open: boolean;
@@ -40,10 +41,11 @@ function Sidebar({ open, onClose }: SidebarProps) {
           <NavLink
             to="/"
             onClick={onClose}
-            className="text-xl font-semibold text-gray-900"
-            style={{ fontFamily: "'Georgia', serif", letterSpacing: "-0.02em" }}
+            className="flex items-center ml-8 text-[14px] font-semibold text-gray-900"
+            style={{ fontFamily: "Arial, sans-serif", letterSpacing: "-0.02em" }}
           >
-            3legant.
+            <img src={logo} alt="Logo"  className="h-8 w-auto"/>
+            <p>General Jalyuzi</p>
           </NavLink>
           <button
             onClick={onClose}

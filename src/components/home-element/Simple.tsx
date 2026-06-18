@@ -36,7 +36,7 @@ function Simple() {
           data-aos-delay="400"
           className="font-semibold text-black"
         >
-          3legant
+          Genral Jalyuzi
         </span>{" "}
         {t("hero_description")}
       </p>

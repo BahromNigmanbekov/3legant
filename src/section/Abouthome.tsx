@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
-import bannerImg from ".././assets/abouthome.png";
+import bannerImg from ".././assets/abouthome.jpg";
 import { useTranslation } from "react-i18next";
 
 function Abouthome() {
   const { t } = useTranslation();
   return (
 
-    <div className="grid grid-cols-1 md:grid-cols-2 min-h-[320px] md:min-h-[400px] lg:min-h-[480px]">
+    <div className="grid grid-cols-1 md:grid-cols-2 min-h-[320px] md:min-h-[400px] lg:min-h-[480px] mb-[100px]">
 
       <div className="overflow-hidden h-[260px] sm:h-[320px] md:h-auto">
         <img
           src={bannerImg}
           alt="Promo banner"
-          className="w-full h-full object-cover"
+          className="w-full h-[500px] object-cover"
         />
       </div>
 

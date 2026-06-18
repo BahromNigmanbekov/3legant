@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import bannerImg from "../assets/abouthome.png";
+import bannerImg from "../assets/abouthome.jpg";
 
 function Aboutcontactus() {
   return (
