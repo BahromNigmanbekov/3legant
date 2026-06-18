@@ -16,7 +16,6 @@ function Sidebar({ open, onClose }: SidebarProps) {
   const navLinks = [
     { label: t("nav_home", "Home"), to: "/" },
     { label: t("nav_shop", "Shop"), to: "/shop" },
-    { label: t("nav_blog", "Blog"), to: "/blog" },
     { label: t("nav_contact", "Contact Us"), to: "/contact" },
   ];
 
