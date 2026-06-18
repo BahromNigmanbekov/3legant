@@ -3,12 +3,11 @@ import Aboutcontactus from "../../section/AboutContactus";
 import Info from "../../section/Info";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useTranslation } from "react-i18next";
 
-// --- KONSTANTALAR ---
 const TELEGRAM_BOT_TOKEN = "8697395061:AAE4gjwOO6t-lVDYkDPZCa9uIlp472EZpYU";
 const TELEGRAM_CHAT_ID = "6877805958";
 
-// --- TYPES ---
 interface FormData {
   fullName: string;
   email: string;
@@ -24,7 +23,6 @@ interface MessageState {
   content: string;
 }
 
-// --- ANTD MESSAGE 100% STYLE (Tepa markazdan chiqadi) ---
 const messageStyles = `
   @keyframes antMessageMoveIn {
     0% { transform: translateY(-100%); opacity: 0; }
@@ -129,6 +127,8 @@ export default function ContactUs() {
   const [status, setStatus] = useState<"idle" | "sending">("idle");
   const { msg, show: showMessage } = useAntMessage();
 
+  const { t } = useTranslation();
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
@@ -167,11 +167,11 @@ export default function ContactUs() {
       <AntMessage msg={msg} />
 
       <section className="px-5 pt-12 pb-10 md:px-16 lg:px-25 max-w-5xl ">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium mt-8 text-gray-900"  data-aos="fade-right">
-          We believe in sustainable decor. We’re passionate about <br />  life at home.
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium mt-8 text-gray-900" data-aos="fade-right">
+          {t("contactt")}
         </h1>
         <p className="mt-5 text-gray-500 max-w-2xl" data-aos="fade-left">
-          Our features timeless furniture, with natural fabrics, curved lines, plenty of mirrors and classic design, which can be incorporated into any decor project. The pieces enchant for their sobriety, to last for generations, faithful to the shapes of each period, with a touch of the present
+          {t("contactp")}
         </p>
       </section>
 
@@ -179,12 +179,12 @@ export default function ContactUs() {
       <Info />
 
       <section className="px-5 md:px-16 lg:px-24 max-w-7xl mx-auto mb-20">
-        <h2 className="text-3xl font-bold text-center mb-10 text-gray-900">Contact Us</h2>
+        <h2 className="text-3xl font-bold text-center mb-10 text-gray-900">{t("contus")}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
             <div className="flex flex-col gap-1">
-              <label className="text-xs font-semibold text-gray-500 uppercase">Full Name</label>
+              <label className="text-xs font-semibold text-gray-500 uppercase">{t("fullname")}</label>
               <input
                 type="text"
                 name="fullName"
@@ -196,7 +196,7 @@ export default function ContactUs() {
               />
             </div>
             <div className="flex flex-col gap-1">
-              <label className="text-xs font-semibold text-gray-500 uppercase">Email Address</label>
+              <label className="text-xs font-semibold text-gray-500 uppercase">{t("emailsend")}</label>
               <input
                 type="email"
                 name="email"
@@ -208,7 +208,7 @@ export default function ContactUs() {
               />
             </div>
             <div className="flex flex-col gap-1">
-              <label className="text-xs font-semibold text-gray-500 uppercase">Message</label>
+              <label className="text-xs font-semibold text-gray-500 uppercase">{t("massage")}</label>
               <textarea
                 name="message"
                 value={formData.message}
@@ -224,29 +224,19 @@ export default function ContactUs() {
               disabled={status === "sending"}
               className="bg-black text-white py-3 px-8 rounded-lg font-semibold hover:bg-gray-800 disabled:bg-gray-400 transition-all w-fit"
             >
-              {status === "sending" ? "Yuborilmoqda..." : "Send Message"}
+              {status === "sending" ? "Yuborilmoqda..." : t("sendms")}
             </button>
           </form>
 
           <div className="h-[400px] rounded-lg overflow-hidden border">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2995.8116317849167!2d69.21295458469035!3d41.33470927130674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8bfe2c9dfdb7%3A0x4e70e6b88f98e874!2sMARS%20IT%20Tinchlik!5e0!3m2!1sen!2s" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d712.002765783173!2d69.20731726961951!3d41.324878998206756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8bf107f80257%3A0xe9d2da80206bd9a7!2sKurgancha%20Street%2C%20Tashkent%2C%20Uzbekistan!5e1!3m2!1sen!2s!4v1781822214163!5m2!1sen!2s" 
               width="100%" 
               height="100%" 
               loading="lazy"
             />
           </div>
         </div>
-      </section>
-
-      {/* Footer info qismi */}
-      <section className="bg-gray-50 py-10 px-5 md:px-16 lg:px-24">
-         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div><p className="font-bold">Free Shipping</p><p className="text-xs text-gray-400">Order above $200</p></div>
-            <div><p className="font-bold">Money-back</p><p className="text-xs text-gray-400">30 days guarantee</p></div>
-            <div><p className="font-bold">Secure Payments</p><p className="text-xs text-gray-400">Secured by Stripe</p></div>
-            <div><p className="font-bold">24/7 Support</p><p className="text-xs text-gray-400">Phone & Email</p></div>
-         </div>
       </section>
     </main>
   );

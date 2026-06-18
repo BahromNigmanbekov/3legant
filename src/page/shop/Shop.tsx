@@ -210,13 +210,13 @@ const Shop = () => {
         </div>
         
         <div className="w-full max-w-lg mt-[100px] md:mt-0">
-          <div className="relative flex items-center bg-white border border-neutral-200 rounded-full p-1.5 shadow-sm transition-all focus-within:border-emerald-500 focus-within:ring-1 focus-within:ring-emerald-500">
+          <div className="relative mt-22 flex items-center bg-white border border-neutral-200 rounded-full p-1.5 shadow-sm transition-all focus-within:border-emerald-500 focus-within:ring-1 focus-within:ring-emerald-500">
             <input
               type="text"
               placeholder="Mahsulotlarni qidirish..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-transparent px-5 py-2.5 text-sm tracking-wide text-neutral-800 placeholder:text-neutral-400 focus:outline-none"
+              className="w-full  bg-transparent px-5 py-2.5 text-sm tracking-wide text-neutral-800 placeholder:text-neutral-400 focus:outline-none"
             />
 
             {searchQuery && (

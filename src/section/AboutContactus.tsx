@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import bannerImg from "../assets/abouthome.jpg";
+import { useTranslation } from "react-i18next";
 
 function Aboutcontactus() {
+
+  const { t } = useTranslation();
   return (
    
-    <div className="grid grid-cols-1 md:grid-cols-2 min-h-[320px] md:min-h-[400px] lg:min-h-[480px]">
+    <div className="grid h-[600px] grid-cols-1 md:grid-cols-2 min-h-[320px] md:min-h-[400px] lg:min-h-[480px]">
 
      
       <div className="overflow-hidden h-[260px] sm:h-[320px] md:h-auto">
@@ -21,19 +24,18 @@ function Aboutcontactus() {
         
         
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-3 md:mb-4">
-         About Us<br className="hidden sm:inline" />
+         {t("aus")}<br className="hidden sm:inline" />
         </h2>
         
         <p className="text-sm text-gray-500 leading-relaxed mb-6 md:mb-8 max-w-xs sm:max-w-sm">
-          3legant is a gift & decorations store based in HCMC, Vietnam. Est since 2019. 
-Our customer service is always prepared to support you 24/7
+          {t("aboutuscontent")}
         </p>
         
         <Link
           to="/shop"
           className="text-sm font-medium text-gray-900 underline underline-offset-4 hover:opacity-60 transition-opacity w-fit"
         >
-          Shop Now →
+          {t("shop_now")} →
         </Link>
       </div>
 

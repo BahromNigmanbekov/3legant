@@ -25,8 +25,6 @@ const YoutubeIcon = () => (
 const navLinks = [
   { label: "Home", path: "/" },
   { label: "Shop", path: "/shop" },
-  { label: "Product", path: "/product" },
-  { label: "Blog", path: "/blog" },
   { label: "Contact Us", path: "/contact" },
 ];
 
@@ -39,18 +37,15 @@ const socialLinks = [
 const Footer: React.FC = () => {
   return (
     <footer className="bg-black text-white w-full">
-      {/* Top section */}
       <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-        {/* Logo + Divider + Tagline */}
         <div className="flex items-center gap-4">
           <span className="text-white text-xl font-semibold tracking-tight">
-            3legant<span className="text-white">.</span>
+            General Jalyuzi<span className="text-white">.</span>
           </span>
           <span className="hidden md:block w-px h-6 bg-gray-600" />
-          <span className="text-gray-400 text-sm">Gift &amp; Decoration Store</span>
+          <span className="text-gray-400 text-sm">Gift &amp; Blinds Store</span>
         </div>
 
-        {/* Nav Links */}
         <nav className="flex flex-wrap gap-x-6 gap-y-3">
           {navLinks.map((link) => (
             <Link
@@ -64,16 +59,13 @@ const Footer: React.FC = () => {
         </nav>
       </div>
 
-      {/* Divider */}
       <div className="max-w-7xl mx-auto px-6">
         <hr className="border-gray-700" />
       </div>
 
-      {/* Bottom section */}
       <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-        {/* Copyright + Legal */}
         <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-sm text-gray-500">
-          <span>Copyright © 2023 3legant. All rights reserved</span>
+          <span>Copyright © 2022 Genral Jalyuzi. All rights reserved</span>
           <div className="flex items-center gap-4">
             <a href="#" className="text-gray-300 font-medium hover:text-white transition-colors duration-200">
               Privacy Policy
@@ -84,7 +76,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Social Icons */}
         <div className="flex items-center gap-4">
           {socialLinks.map((social) => (
             <a
