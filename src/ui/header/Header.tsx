@@ -1,18 +1,15 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import {  Menu } from "lucide-react";
-import logo from "../../assets/logo.jpg"
+import { Menu } from "lucide-react";
+import logo from "../../assets/logo.jpg";
 import { useTranslation } from "react-i18next";
 import Sidebar from "../../components/sidebar/Sidebar";
 
-// ✅ Har bir til uchun haqiqiy dumaloq ikonka (rasm) havolalari
 const languages = [
   { code: "en", label: "EN", flagUrl: "https://flagcdn.com/w40/gb.png" },
   { code: "ru", label: "RU", flagUrl: "https://flagcdn.com/w40/ru.png" },
   { code: "uz", label: "UZ", flagUrl: "https://flagcdn.com/w40/uz.png" },
 ];
-
-const cartCount = 2;
 
 function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -45,7 +42,7 @@ function Header() {
               <Menu strokeWidth={1.8} className="w-5 h-5" />
             </button>
             <NavLink to="/" className="flex items-center text-[14px] font-semibold text-gray-900" style={{ fontFamily: "Arial, sans-serif" }}>
-              <img src={logo} alt="Logo"  className="h-8 w-auto"/>
+              <img src={logo} alt="Logo" className="h-8 w-auto" />
               <p>General Jalyuzi</p>
             </NavLink>
           </div>
@@ -61,16 +58,11 @@ function Header() {
           </ul>
 
           <div className="flex items-center gap-1">
-            
-            
-
-            {/* ✅ Haqiqiy dumaloq rasm-ikonkali til tugmasi */}
             <div className="relative ml-1">
               <button
                 onClick={() => setLangOpen((prev) => !prev)}
                 className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-100 border border-gray-200 transition-all"
               >
-                {/* Dumaloq bayroqcha rasmi */}
                 <img 
                   src={currentLang.flagUrl} 
                   alt={currentLang.label}
@@ -92,7 +84,6 @@ function Header() {
                           onClick={() => handleChangeLang(code)}
                           className={`w-full flex items-center gap-3 px-3 py-2.5 text-sm transition-colors ${i18n.language === code ? "bg-gray-50 text-gray-900 font-bold" : "text-gray-600 hover:bg-gray-50"}`}
                         >
-                          {/* Dropdown ichidagi dumaloq rasm */}
                           <img 
                             src={flagUrl} 
                             alt={label}
