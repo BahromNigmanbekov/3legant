@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { ShoppingBag, Menu } from "lucide-react";
+import {  Menu } from "lucide-react";
 import logo from "../../assets/logo.jpg"
 import { useTranslation } from "react-i18next";
 import Sidebar from "../../components/sidebar/Sidebar";
